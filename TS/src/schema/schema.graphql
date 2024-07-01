@@ -1,0 +1,171 @@
+type Usuario {
+  usuario_id: Int!
+  nombre: String!
+  apellido: String!
+  cedula: String!
+  correo_electronico: String!
+  direccion: String!
+  fecha_registro: String!
+  vehiculos: [Vehiculo]
+}
+
+type Vehiculo {
+  id: Int!
+  usuario: Usuario!
+  placa: String!
+  marca: String!
+  modelo: String!
+}
+
+type Espacio {
+  parqueadero_id: Int!
+  numero_parqueadero: Int!
+  disponible: Boolean!
+}
+
+type Reserva {
+  id_reserva: Int!
+  fecha_inicio: String!
+  fecha_fin: String!
+  activa: Boolean!
+  vehiculo: Vehiculo!
+  parqueadero: Espacio!
+}
+
+type Ingreso {
+  id_ingreso: Int!
+  fecha_ingreso: String!
+  duracion_estacionamiento_esperada: String!
+  reserva: Reserva!
+}
+
+type Salida {
+  id_salida: Int!
+  fecha_salida: String!
+  duracion_estacionamiento_final: String!
+  ingreso: Ingreso!
+}
+
+type Query {
+  getUsuario(id: Int!): Usuario
+  getUsuarios: [Usuario!]!
+  getVehiculo(id: Int!): Vehiculo
+  getVehiculos: [Vehiculo!]!
+  getEspacio(id: Int!): Espacio
+  getEspacios: [Espacio!]!
+  getReserva(id: Int!): Reserva
+  getReservas: [Reserva!]!
+  getIngreso(id: Int!): Ingreso
+  getIngresos: [Ingreso!]!
+  getSalida(id: Int!): Salida
+  getSalidas: [Salida!]!
+}
+
+type Mutation {
+  createUsuario(
+    nombre: String!
+    apellido: String!
+    cedula: String!
+    correo_electronico: String!
+    direccion: String!
+  ): Usuario
+
+  updateUsuario(
+    id: Int!
+    nombre: String
+    apellido: String
+    cedula: String
+    correo_electronico: String
+    direccion: String
+  ): Usuario
+
+  deleteUsuario(id: Int!): Usuario
+  
+  createVehiculo(
+    usuario_id: Int!
+    placa: String!
+    marca: String!
+    modelo: String!
+  ): Vehiculo
+
+  updateVehiculo(
+    id: Int!
+    usuario_id: Int
+    placa: String
+    marca: String
+    modelo: String
+  ): Vehiculo
+
+  deleteVehiculo(id: Int!): Vehiculo
+
+  createEspacio(
+    numero_parqueadero: Int!
+    disponible: Boolean!
+  ): Espacio
+
+  updateEspacio(
+    id: Int!
+    numero_parqueadero: Int
+    disponible: Boolean
+  ): Espacio
+
+  deleteEspacio(id: Int!): Espacio
+
+  createReserva(
+    fecha_inicio: String!
+    fecha_fin: String!
+    activa: Boolean!
+    vehiculo_id: Int!
+    parqueadero_id: Int!
+  ): Reserva
+
+  updateReserva(
+    id: Int!
+    fecha_inicio: String
+    fecha_fin: String
+    activa: Boolean
+    vehiculo_id: Int
+    parqueadero_id: Int
+  ): Reserva
+
+  deleteReserva(id: Int!): Reserva
+
+  createIngreso(
+    fecha_ingreso: String!
+    duracion_estacionamiento_esperada: String!
+    reserva_id: Int!
+  ): Ingreso
+
+  updateIngreso(
+    id: Int!
+    fecha_ingreso: String
+    duracion_estacionamiento_esperada: String
+    reserva_id: Int
+  ): Ingreso
+
+  deleteIngreso(id: Int!): Ingreso
+
+  createSalida(
+    fecha_salida: String!
+    duracion_estacionamiento_final: String!
+    ingreso_id: Int!
+  ): Salida
+
+  updateSalida(
+    id: Int!
+    fecha_salida: String
+    duracion_estacionamiento_final: String
+    ingreso_id: Int
+  ): Salida
+
+  deleteSalida(id: Int!): Salida
+}
+
+type Subscription {
+  usuarioAdded: Usuario
+  vehiculoAdded: Vehiculo
+  espacioAdded: Espacio
+  reservaAdded: Reserva
+  ingresoAdded: Ingreso
+  salidaAdded: Salida
+}
