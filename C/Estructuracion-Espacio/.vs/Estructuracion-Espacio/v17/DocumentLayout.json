@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|c:\\users\\pc\\desktop\\c\\estructuracion-espacio\\estructuracion-espacio\\models\\espacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|solutionrelative:estructuracion-espacio\\models\\espacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|c:\\users\\pc\\desktop\\c\\estructuracion-espacio\\estructuracion-espacio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|solutionrelative:estructuracion-espacio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|c:\\users\\pc\\desktop\\c\\estructuracion-espacio\\estructuracion-espacio\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|solutionrelative:estructuracion-espacio\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|c:\\users\\pc\\desktop\\c\\estructuracion-espacio\\estructuracion-espacio\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|solutionrelative:estructuracion-espacio\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|c:\\users\\pc\\desktop\\c\\estructuracion-espacio\\estructuracion-espacio\\controllers\\espaciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{231D2173-961F-497D-A8D0-20BCC751BDFC}|Estructuracion-Espacio\\Estructuracion-Espacio.csproj|solutionrelative:estructuracion-espacio\\controllers\\espaciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Program.cs",
+              "RelativeDocumentMoniker": "Estructuracion-Espacio\\Program.cs",
+              "ToolTip": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Program.cs",
+              "RelativeToolTip": "Estructuracion-Espacio\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T05:09:32.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\appsettings.json",
+              "RelativeDocumentMoniker": "Estructuracion-Espacio\\appsettings.json",
+              "ToolTip": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\appsettings.json",
+              "RelativeToolTip": "Estructuracion-Espacio\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-04T05:00:38.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Estructuracion-Espacio\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Estructuracion-Espacio\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T05:05:32.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EspacioController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Controllers\\EspacioController.cs",
+              "RelativeDocumentMoniker": "Estructuracion-Espacio\\Controllers\\EspacioController.cs",
+              "ToolTip": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Controllers\\EspacioController.cs",
+              "RelativeToolTip": "Estructuracion-Espacio\\Controllers\\EspacioController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T05:01:58.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Espacio.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Models\\Espacio.cs",
+              "RelativeDocumentMoniker": "Estructuracion-Espacio\\Models\\Espacio.cs",
+              "ToolTip": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Models\\Espacio.cs",
+              "RelativeToolTip": "Estructuracion-Espacio\\Models\\Espacio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T05:00:51.026Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
