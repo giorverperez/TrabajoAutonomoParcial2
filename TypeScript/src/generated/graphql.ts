@@ -16,55 +16,76 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
-export type ActualizarEspacioInput = {
-  disponible?: InputMaybe<Scalars['Boolean']['input']>;
-  numero_parqueadero?: InputMaybe<Scalars['Int']['input']>;
+export type Entrada = {
+  __typename?: 'Entrada';
+  fecha_entrada: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  vehiculo?: Maybe<Vehiculo>;
+  vehiculo_id: Scalars['ID']['output'];
 };
 
-export type CrearEspacioInput = {
-  disponible: Scalars['Boolean']['input'];
-  numero_parqueadero: Scalars['Int']['input'];
+export type EntradaInput = {
+  fecha_entrada: Scalars['String']['input'];
+  other_fields?: InputMaybe<Scalars['String']['input']>;
+  vehiculo_id: Scalars['ID']['input'];
 };
 
 export type Espacio = {
   __typename?: 'Espacio';
   disponible: Scalars['Boolean']['output'];
   id: Scalars['ID']['output'];
-  numero_parqueadero: Scalars['Int']['output'];
+  numero_parquedero: Scalars['Int']['output'];
+};
+
+export type EspacioInput = {
+  disponible: Scalars['Boolean']['input'];
+  numero_parquedero: Scalars['Int']['input'];
 };
 
 export type Mutation = {
   __typename?: 'Mutation';
-  actualizarEspacio: Espacio;
-  actualizarUsuario: Usuario;
-  crearEspacio: Espacio;
-  crearUsuario: Usuario;
-  createVehiculo: Vehiculo;
-  deleteVehiculo: Scalars['Boolean']['output'];
-  eliminarEspacio: Scalars['Boolean']['output'];
-  eliminarUsuario: Scalars['Boolean']['output'];
-  updateVehiculo: Vehiculo;
+  createEntrada?: Maybe<Entrada>;
+  createEspacio?: Maybe<Espacio>;
+  createReserva?: Maybe<Reserva>;
+  createSalida?: Maybe<Salida>;
+  createUsuario?: Maybe<Usuario>;
+  createVehiculo?: Maybe<Vehiculo>;
+  deleteEntrada?: Maybe<Scalars['Boolean']['output']>;
+  deleteEspacio?: Maybe<Scalars['Boolean']['output']>;
+  deleteReserva?: Maybe<Scalars['Boolean']['output']>;
+  deleteSalida?: Maybe<Scalars['Boolean']['output']>;
+  deleteUsuario?: Maybe<Scalars['Boolean']['output']>;
+  deleteVehiculo?: Maybe<Scalars['Boolean']['output']>;
+  updateEntrada?: Maybe<Entrada>;
+  updateEspacio?: Maybe<Espacio>;
+  updateReserva?: Maybe<Reserva>;
+  updateSalida?: Maybe<Salida>;
+  updateUsuario?: Maybe<Usuario>;
+  updateVehiculo?: Maybe<Vehiculo>;
 };
 
 
-export type MutationActualizarEspacioArgs = {
-  id: Scalars['ID']['input'];
-  input: ActualizarEspacioInput;
+export type MutationCreateEntradaArgs = {
+  input: EntradaInput;
 };
 
 
-export type MutationActualizarUsuarioArgs = {
-  id: Scalars['ID']['input'];
-  input: UsuarioInput;
+export type MutationCreateEspacioArgs = {
+  input: EspacioInput;
 };
 
 
-export type MutationCrearEspacioArgs = {
-  input: CrearEspacioInput;
+export type MutationCreateReservaArgs = {
+  input: ReservaInput;
 };
 
 
-export type MutationCrearUsuarioArgs = {
+export type MutationCreateSalidaArgs = {
+  input: SalidaInput;
+};
+
+
+export type MutationCreateUsuarioArgs = {
   input: UsuarioInput;
 };
 
@@ -74,18 +95,63 @@ export type MutationCreateVehiculoArgs = {
 };
 
 
+export type MutationDeleteEntradaArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationDeleteEspacioArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationDeleteReservaArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationDeleteSalidaArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type MutationDeleteUsuarioArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
 export type MutationDeleteVehiculoArgs = {
   id: Scalars['ID']['input'];
 };
 
 
-export type MutationEliminarEspacioArgs = {
+export type MutationUpdateEntradaArgs = {
   id: Scalars['ID']['input'];
+  input: EntradaInput;
 };
 
 
-export type MutationEliminarUsuarioArgs = {
+export type MutationUpdateEspacioArgs = {
   id: Scalars['ID']['input'];
+  input: EspacioInput;
+};
+
+
+export type MutationUpdateReservaArgs = {
+  id: Scalars['ID']['input'];
+  input: ReservaInput;
+};
+
+
+export type MutationUpdateSalidaArgs = {
+  id: Scalars['ID']['input'];
+  input: SalidaInput;
+};
+
+
+export type MutationUpdateUsuarioArgs = {
+  id: Scalars['ID']['input'];
+  input: UsuarioInput;
 };
 
 
@@ -96,16 +162,37 @@ export type MutationUpdateVehiculoArgs = {
 
 export type Query = {
   __typename?: 'Query';
+  entrada?: Maybe<Entrada>;
+  entradas?: Maybe<Array<Maybe<Entrada>>>;
   espacio?: Maybe<Espacio>;
-  espacios: Array<Espacio>;
+  espacios?: Maybe<Array<Maybe<Espacio>>>;
+  reserva?: Maybe<Reserva>;
+  reservas?: Maybe<Array<Maybe<Reserva>>>;
+  salida?: Maybe<Salida>;
+  salidas?: Maybe<Array<Maybe<Salida>>>;
   usuario?: Maybe<Usuario>;
-  usuarios: Array<Usuario>;
+  usuarios?: Maybe<Array<Maybe<Usuario>>>;
   vehiculo?: Maybe<Vehiculo>;
-  vehiculos: Array<Vehiculo>;
+  vehiculos?: Maybe<Array<Maybe<Vehiculo>>>;
+};
+
+
+export type QueryEntradaArgs = {
+  id: Scalars['ID']['input'];
 };
 
 
 export type QueryEspacioArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type QueryReservaArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type QuerySalidaArgs = {
   id: Scalars['ID']['input'];
 };
 
@@ -117,6 +204,35 @@ export type QueryUsuarioArgs = {
 
 export type QueryVehiculoArgs = {
   id: Scalars['ID']['input'];
+};
+
+export type Reserva = {
+  __typename?: 'Reserva';
+  fechaReserva: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  usuario: Usuario;
+  vehiculo: Vehiculo;
+};
+
+export type ReservaInput = {
+  fechaReserva: Scalars['String']['input'];
+  usuario: Scalars['ID']['input'];
+  vehiculo: Scalars['ID']['input'];
+};
+
+export type Salida = {
+  __typename?: 'Salida';
+  fecha_salida: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  other_fields?: Maybe<Scalars['String']['output']>;
+  vehiculo?: Maybe<Vehiculo>;
+  vehiculo_id: Scalars['ID']['output'];
+};
+
+export type SalidaInput = {
+  fecha_salida: Scalars['String']['input'];
+  other_fields?: InputMaybe<Scalars['String']['input']>;
+  vehiculo_id: Scalars['ID']['input'];
 };
 
 export type Usuario = {
@@ -137,16 +253,16 @@ export type Vehiculo = {
   __typename?: 'Vehiculo';
   color: Scalars['String']['output'];
   id: Scalars['ID']['output'];
-  marca: Scalars['String']['output'];
   modelo: Scalars['String']['output'];
   placa: Scalars['String']['output'];
+  usuario: Usuario;
 };
 
 export type VehiculoInput = {
   color: Scalars['String']['input'];
-  marca: Scalars['String']['input'];
   modelo: Scalars['String']['input'];
   placa: Scalars['String']['input'];
+  usuario: Scalars['ID']['input'];
 };
 
 
@@ -220,14 +336,19 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  ActualizarEspacioInput: ActualizarEspacioInput;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
-  CrearEspacioInput: CrearEspacioInput;
+  Entrada: ResolverTypeWrapper<Entrada>;
+  EntradaInput: EntradaInput;
   Espacio: ResolverTypeWrapper<Espacio>;
+  EspacioInput: EspacioInput;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Scalars['Int']['output']>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
+  Reserva: ResolverTypeWrapper<Reserva>;
+  ReservaInput: ReservaInput;
+  Salida: ResolverTypeWrapper<Salida>;
+  SalidaInput: SalidaInput;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
   Usuario: ResolverTypeWrapper<Usuario>;
   UsuarioInput: UsuarioInput;
@@ -237,14 +358,19 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  ActualizarEspacioInput: ActualizarEspacioInput;
   Boolean: Scalars['Boolean']['output'];
-  CrearEspacioInput: CrearEspacioInput;
+  Entrada: Entrada;
+  EntradaInput: EntradaInput;
   Espacio: Espacio;
+  EspacioInput: EspacioInput;
   ID: Scalars['ID']['output'];
   Int: Scalars['Int']['output'];
   Mutation: {};
   Query: {};
+  Reserva: Reserva;
+  ReservaInput: ReservaInput;
+  Salida: Salida;
+  SalidaInput: SalidaInput;
   String: Scalars['String']['output'];
   Usuario: Usuario;
   UsuarioInput: UsuarioInput;
@@ -252,32 +378,72 @@ export type ResolversParentTypes = {
   VehiculoInput: VehiculoInput;
 };
 
+export type EntradaResolvers<ContextType = any, ParentType extends ResolversParentTypes['Entrada'] = ResolversParentTypes['Entrada']> = {
+  fecha_entrada?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  vehiculo?: Resolver<Maybe<ResolversTypes['Vehiculo']>, ParentType, ContextType>;
+  vehiculo_id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type EspacioResolvers<ContextType = any, ParentType extends ResolversParentTypes['Espacio'] = ResolversParentTypes['Espacio']> = {
   disponible?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  numero_parqueadero?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  numero_parquedero?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  actualizarEspacio?: Resolver<ResolversTypes['Espacio'], ParentType, ContextType, RequireFields<MutationActualizarEspacioArgs, 'id' | 'input'>>;
-  actualizarUsuario?: Resolver<ResolversTypes['Usuario'], ParentType, ContextType, RequireFields<MutationActualizarUsuarioArgs, 'id' | 'input'>>;
-  crearEspacio?: Resolver<ResolversTypes['Espacio'], ParentType, ContextType, RequireFields<MutationCrearEspacioArgs, 'input'>>;
-  crearUsuario?: Resolver<ResolversTypes['Usuario'], ParentType, ContextType, RequireFields<MutationCrearUsuarioArgs, 'input'>>;
-  createVehiculo?: Resolver<ResolversTypes['Vehiculo'], ParentType, ContextType, RequireFields<MutationCreateVehiculoArgs, 'input'>>;
-  deleteVehiculo?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationDeleteVehiculoArgs, 'id'>>;
-  eliminarEspacio?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationEliminarEspacioArgs, 'id'>>;
-  eliminarUsuario?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<MutationEliminarUsuarioArgs, 'id'>>;
-  updateVehiculo?: Resolver<ResolversTypes['Vehiculo'], ParentType, ContextType, RequireFields<MutationUpdateVehiculoArgs, 'id' | 'input'>>;
+  createEntrada?: Resolver<Maybe<ResolversTypes['Entrada']>, ParentType, ContextType, RequireFields<MutationCreateEntradaArgs, 'input'>>;
+  createEspacio?: Resolver<Maybe<ResolversTypes['Espacio']>, ParentType, ContextType, RequireFields<MutationCreateEspacioArgs, 'input'>>;
+  createReserva?: Resolver<Maybe<ResolversTypes['Reserva']>, ParentType, ContextType, RequireFields<MutationCreateReservaArgs, 'input'>>;
+  createSalida?: Resolver<Maybe<ResolversTypes['Salida']>, ParentType, ContextType, RequireFields<MutationCreateSalidaArgs, 'input'>>;
+  createUsuario?: Resolver<Maybe<ResolversTypes['Usuario']>, ParentType, ContextType, RequireFields<MutationCreateUsuarioArgs, 'input'>>;
+  createVehiculo?: Resolver<Maybe<ResolversTypes['Vehiculo']>, ParentType, ContextType, RequireFields<MutationCreateVehiculoArgs, 'input'>>;
+  deleteEntrada?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<MutationDeleteEntradaArgs, 'id'>>;
+  deleteEspacio?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<MutationDeleteEspacioArgs, 'id'>>;
+  deleteReserva?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<MutationDeleteReservaArgs, 'id'>>;
+  deleteSalida?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<MutationDeleteSalidaArgs, 'id'>>;
+  deleteUsuario?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<MutationDeleteUsuarioArgs, 'id'>>;
+  deleteVehiculo?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, RequireFields<MutationDeleteVehiculoArgs, 'id'>>;
+  updateEntrada?: Resolver<Maybe<ResolversTypes['Entrada']>, ParentType, ContextType, RequireFields<MutationUpdateEntradaArgs, 'id' | 'input'>>;
+  updateEspacio?: Resolver<Maybe<ResolversTypes['Espacio']>, ParentType, ContextType, RequireFields<MutationUpdateEspacioArgs, 'id' | 'input'>>;
+  updateReserva?: Resolver<Maybe<ResolversTypes['Reserva']>, ParentType, ContextType, RequireFields<MutationUpdateReservaArgs, 'id' | 'input'>>;
+  updateSalida?: Resolver<Maybe<ResolversTypes['Salida']>, ParentType, ContextType, RequireFields<MutationUpdateSalidaArgs, 'id' | 'input'>>;
+  updateUsuario?: Resolver<Maybe<ResolversTypes['Usuario']>, ParentType, ContextType, RequireFields<MutationUpdateUsuarioArgs, 'id' | 'input'>>;
+  updateVehiculo?: Resolver<Maybe<ResolversTypes['Vehiculo']>, ParentType, ContextType, RequireFields<MutationUpdateVehiculoArgs, 'id' | 'input'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  entrada?: Resolver<Maybe<ResolversTypes['Entrada']>, ParentType, ContextType, RequireFields<QueryEntradaArgs, 'id'>>;
+  entradas?: Resolver<Maybe<Array<Maybe<ResolversTypes['Entrada']>>>, ParentType, ContextType>;
   espacio?: Resolver<Maybe<ResolversTypes['Espacio']>, ParentType, ContextType, RequireFields<QueryEspacioArgs, 'id'>>;
-  espacios?: Resolver<Array<ResolversTypes['Espacio']>, ParentType, ContextType>;
+  espacios?: Resolver<Maybe<Array<Maybe<ResolversTypes['Espacio']>>>, ParentType, ContextType>;
+  reserva?: Resolver<Maybe<ResolversTypes['Reserva']>, ParentType, ContextType, RequireFields<QueryReservaArgs, 'id'>>;
+  reservas?: Resolver<Maybe<Array<Maybe<ResolversTypes['Reserva']>>>, ParentType, ContextType>;
+  salida?: Resolver<Maybe<ResolversTypes['Salida']>, ParentType, ContextType, RequireFields<QuerySalidaArgs, 'id'>>;
+  salidas?: Resolver<Maybe<Array<Maybe<ResolversTypes['Salida']>>>, ParentType, ContextType>;
   usuario?: Resolver<Maybe<ResolversTypes['Usuario']>, ParentType, ContextType, RequireFields<QueryUsuarioArgs, 'id'>>;
-  usuarios?: Resolver<Array<ResolversTypes['Usuario']>, ParentType, ContextType>;
+  usuarios?: Resolver<Maybe<Array<Maybe<ResolversTypes['Usuario']>>>, ParentType, ContextType>;
   vehiculo?: Resolver<Maybe<ResolversTypes['Vehiculo']>, ParentType, ContextType, RequireFields<QueryVehiculoArgs, 'id'>>;
-  vehiculos?: Resolver<Array<ResolversTypes['Vehiculo']>, ParentType, ContextType>;
+  vehiculos?: Resolver<Maybe<Array<Maybe<ResolversTypes['Vehiculo']>>>, ParentType, ContextType>;
+};
+
+export type ReservaResolvers<ContextType = any, ParentType extends ResolversParentTypes['Reserva'] = ResolversParentTypes['Reserva']> = {
+  fechaReserva?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  usuario?: Resolver<ResolversTypes['Usuario'], ParentType, ContextType>;
+  vehiculo?: Resolver<ResolversTypes['Vehiculo'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type SalidaResolvers<ContextType = any, ParentType extends ResolversParentTypes['Salida'] = ResolversParentTypes['Salida']> = {
+  fecha_salida?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  other_fields?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  vehiculo?: Resolver<Maybe<ResolversTypes['Vehiculo']>, ParentType, ContextType>;
+  vehiculo_id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type UsuarioResolvers<ContextType = any, ParentType extends ResolversParentTypes['Usuario'] = ResolversParentTypes['Usuario']> = {
@@ -291,16 +457,19 @@ export type UsuarioResolvers<ContextType = any, ParentType extends ResolversPare
 export type VehiculoResolvers<ContextType = any, ParentType extends ResolversParentTypes['Vehiculo'] = ResolversParentTypes['Vehiculo']> = {
   color?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  marca?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   modelo?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   placa?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  usuario?: Resolver<ResolversTypes['Usuario'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = any> = {
+  Entrada?: EntradaResolvers<ContextType>;
   Espacio?: EspacioResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  Reserva?: ReservaResolvers<ContextType>;
+  Salida?: SalidaResolvers<ContextType>;
   Usuario?: UsuarioResolvers<ContextType>;
   Vehiculo?: VehiculoResolvers<ContextType>;
 };

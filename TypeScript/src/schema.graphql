@@ -1,84 +1,124 @@
-# schema.graphql
-
 type Vehiculo {
-  id: ID!
-  placa: String!
-  marca: String!
-  modelo: String!
-  color: String!
+    id: ID!
+    placa: String!
+    modelo: String!
+    color: String!
+    usuario: Usuario! # Añadir el campo usuario
 }
 
-type Query {
-  vehiculos: [Vehiculo!]!
-  vehiculo(id: ID!): Vehiculo
+type Salida {
+    id: ID!
+    vehiculo_id: ID!
+    fecha_salida: String!
+    other_fields: String
+    vehiculo: Vehiculo
 }
 
-type Mutation {
-  createVehiculo(input: VehiculoInput!): Vehiculo!
-  updateVehiculo(id: ID!, input: VehiculoInput!): Vehiculo!
-  deleteVehiculo(id: ID!): Boolean!
+type Reserva {
+    id: ID!
+    vehiculo: Vehiculo!
+    usuario: Usuario!
+    fechaReserva: String! # Añadir el campo fechaReserva
 }
 
-input VehiculoInput {
-  placa: String!
-  marca: String!
-  modelo: String!
-  color: String!
+type Entrada {
+    id: ID!
+    vehiculo_id: ID!
+    fecha_entrada: String!
+    vehiculo: Vehiculo
 }
-
-
-#Usuario
 
 type Usuario {
-  id: ID!
-  nombre: String!
-  email: String!
-  contrasena: String!
+    id: ID!
+    nombre: String!
+    email: String!
+    contrasena: String!
 }
 
-type Query {
-  usuarios: [Usuario!]!
-  usuario(id: ID!): Usuario
+type Espacio {
+    id: ID!
+    numero_parquedero: Int!
+    disponible: Boolean!
 }
 
-type Mutation {
-  crearUsuario(input: UsuarioInput!): Usuario!
-  actualizarUsuario(id: ID!, input: UsuarioInput!): Usuario!
-  eliminarUsuario(id: ID!): Boolean!
+
+input VehiculoInput {
+    placa: String!
+    modelo: String!
+    color: String!
+    usuario: ID! # Añadir el campo usuario
+}
+
+input SalidaInput {
+    vehiculo_id: ID!
+    fecha_salida: String!
+    
+}
+
+input ReservaInput {
+    vehiculo: ID!
+    usuario: ID!
+    fechaReserva: String! # Añadir el campo fechaReserva
+}
+
+input EntradaInput {
+    vehiculo_id: ID!
+    fecha_entrada: String!
+    other_fields: String
 }
 
 input UsuarioInput {
-  nombre: String!
-  email: String!
-  contrasena: String!
+    nombre: String!
+    email: String!
+    contrasena: String!
 }
 
-#Espacio
-
-type Espacio {
-  id: ID!
-  numero_parqueadero: Int!
-  disponible: Boolean!
+input EspacioInput {
+    numero_parquedero: Int!
+    disponible: Boolean!
 }
 
 type Query {
-  espacios: [Espacio!]!
-  espacio(id: ID!): Espacio
-}
+    vehiculos: [Vehiculo]
+    vehiculo(id: ID!): Vehiculo
 
+    salidas: [Salida]
+    salida(id: ID!): Salida
+
+    reservas: [Reserva]
+    reserva(id: ID!): Reserva
+
+    entradas: [Entrada]
+    entrada(id: ID!): Entrada
+
+    usuarios: [Usuario]
+    usuario(id: ID!): Usuario
+
+    espacios: [Espacio]
+    espacio(id: ID!): Espacio
+}
 type Mutation {
-  crearEspacio(input: CrearEspacioInput!): Espacio!
-  actualizarEspacio(id: ID!, input: ActualizarEspacioInput!): Espacio!
-  eliminarEspacio(id: ID!): Boolean!
-}
+    createVehiculo(input: VehiculoInput!): Vehiculo
+    updateVehiculo(id: ID!, input: VehiculoInput!): Vehiculo
+    deleteVehiculo(id: ID!): Boolean
 
-input CrearEspacioInput {
-  numero_parqueadero: Int!
-  disponible: Boolean!
-}
+    createSalida(input: SalidaInput!): Salida
+    updateSalida(id: ID!, input: SalidaInput!): Salida
+    deleteSalida(id: ID!): Boolean
 
-input ActualizarEspacioInput {
-  numero_parqueadero: Int
-  disponible: Boolean
-}
+    createReserva(input: ReservaInput!): Reserva
+    updateReserva(id: ID!, input: ReservaInput!): Reserva
+    deleteReserva(id: ID!): Boolean
 
+    createEntrada(input: EntradaInput!): Entrada
+    updateEntrada(id: ID!, input: EntradaInput!): Entrada
+    deleteEntrada(id: ID!): Boolean
+
+    createUsuario(input: UsuarioInput!): Usuario
+    updateUsuario(id: ID!, input: UsuarioInput!): Usuario
+    deleteUsuario(id: ID!): Boolean
+
+    createEspacio(input: EspacioInput!): Espacio
+    updateEspacio(id: ID!, input: EspacioInput!): Espacio
+    deleteEspacio(id: ID!): Boolean
+}

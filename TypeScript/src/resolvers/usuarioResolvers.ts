@@ -12,15 +12,15 @@ export const usuarioResolvers = {
     },
   },
   Mutation: {
-    crearUsuario: async (_: any, { input }: any) => {
+    createUsuario: async (_: any, { input }: any) => {
       const createdUsuario = await createUsuario(input);
       return createdUsuario; // Asegúrate de que los campos devueltos coincidan con el tipo Usuario en el esquema
     },
-    actualizarUsuario: async (_: any, { id, input }: any) => {
+    updateUsuario: async (_: any, { id, input }: any) => {
       const updatedUsuario = await updateUsuario(id, input);
       return updatedUsuario; // Asegúrate de que los campos devueltos coincidan con el tipo Usuario en el esquema
     },
-    eliminarUsuario: async (_: any, { id }: any) => {
+    deleteUsuario: async (_: any, { id }: any) => {
       const result = await deleteUsuario(id);
       return result; // Asegúrate de que el tipo de retorno coincida con Boolean en el esquema
     },

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj": {}
+    "C:\\Users\\pc\\Desktop\\Main\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj": {
+    "C:\\Users\\pc\\Desktop\\Main\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj",
+        "projectUniqueName": "C:\\Users\\pc\\Desktop\\Main\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj",
         "projectName": "Estructuracion-Espacio",
-        "projectPath": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj",
+        "projectPath": "C:\\Users\\pc\\Desktop\\Main\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\Estructuracion-Espacio.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc\\Desktop\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\obj\\",
+        "outputPath": "C:\\Users\\pc\\Desktop\\Main\\C\\Estructuracion-Espacio\\Estructuracion-Espacio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
